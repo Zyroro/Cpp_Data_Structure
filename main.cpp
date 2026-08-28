@@ -203,6 +203,57 @@ int main()
 
 	/* -------------- Queue ---------------- */
 
+	//A queue stores multiple elements in a specific order, called FIFO.
+
+	// FIFO stands for First in, First Out. 
+	// To visualize FIFO, think of a queue as people standing in line in a supermarket.
+	// The first person to stand in line is also the first who can pay and leave the supermarket. 
+	// This way of organizing elements is called FIFO in computer science and programming.
+	
+	//	Unlike vectors, elements in the queue are not accessed by index numbers.
+	// Since queue elements are added at the end and removed from the front, 
+	// you can only access and modify an element at the front or the back.
+	// You can't use a for-each loop sadly, but you can use a while not empty loop.
+	
+	// Functions: size(), empty(), front(), back(), push(), pop().
+
+	std::cout << "--------------- Queue -----------------" << "\n\n";
+
+	{
+		std::queue<std::string> animals; // You can't assign values on declaration
+	
+		std::cout << "You cannot assign values to a queue on declaration." << '\n';
+		std::cout << "Is queue empty: " << animals.empty() << "\n\n";
+	
+		// After pushing.
+		animals.push("Pig");
+		animals.push("Sheep");
+		animals.push("Cow");
+	
+		std::cout << "The queue would now have pig, sheep, cow. With pig being the first." << '\n';
+		std::cout << "Size of the queue: " << animals.size() << '\n';
+		std::cout << "First animal in queue: " << animals.front() << '\n';
+		std::cout << "Last animal in queue: " << animals.back() << "\n\n";
+	
+		// After modifying front and back.
+		animals.front() = "Pigson";
+		animals.back() = "Cowson";
+	
+		std::cout << "First animal in queue (After): " << animals.front() << '\n';
+		std::cout << "Last animal in queue (After): " << animals.back() << "\n\n";
+	
+	
+		std::cout << "It's like queueing up in a restaurant (animal edition):" << '\n';
+		while (!animals.empty())
+		{
+			std::cout << "Current animal: " << animals.front() << '\n';
+			animals.pop();
+		}
+		
+	// There's std::priority_queue which sorts things out in an order like "Set".
+	}
+	std::cout << '\n';
+
 	/* -------------- Deque ---------------- */
 
 	/* -------------- Sets ---------------- */
